@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BG BOT v5</title>
+</head>
+<body>
+    <h1>BG BOT LIVE</h1>
+    <div id="price">Loading...</div>
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+        socket.on("market", (data) => {
+            document.getElementById("price").innerText = data.price;
+        });
+    </script>
+</body>
+</html>
